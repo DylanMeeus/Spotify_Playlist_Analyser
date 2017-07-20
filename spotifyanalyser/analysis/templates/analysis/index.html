@@ -1,0 +1,15 @@
+<!-- on the index we can select an album to analyse, so we display all the albums -->
+
+<html>
+<head>
+    <title> Playlist selection </title>
+</head>
+
+<body>
+    <h1>Select playlist: </h1>
+
+    {% for playlist in playlists %}
+        <li> {{ playlist.playlist_name }} </li>
+    {% endfor %}
+</body>
+</html>
