@@ -1,0 +1,15 @@
+body{
+    background-color:antiquewhite;
+}
+
+
+.playlist-image{
+    width:200px;
+    height:200px;
+
+}
+
+.playlist-image:hover{
+    border: 2px solid dodgerblue;
+    cursor:hand
+}
