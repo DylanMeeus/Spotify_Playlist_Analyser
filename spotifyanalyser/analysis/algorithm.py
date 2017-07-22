@@ -15,10 +15,14 @@ class Playlist:
     def __init__(self,name):
         self.playlist_name = name
         self.tracks = []
+        self.image_url = ""
         pass
 
     def set_tracks(self, tracks):
         self.tracks = tracks
+
+    def set_image(self,image):
+        self.image_url = image
 
 class Analyser:
     """ Analyse a playlist """
@@ -38,6 +42,8 @@ class Analyser:
         for playlist in playlists['items']:
             name = (playlist['name'])
             saved_playlist = Playlist(name)
+            saved_playlist.set_image(playlist['images'][0]['url'])
+
             if playlist['owner']['id'].lower() == self.username.lower():
                 print(playlist['name'])
                 results = self.spotify.user_playlist(self.username, playlist['id'],
